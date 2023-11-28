@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage File Stores</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Include the header  -->
+<script>
+   
+    var headerContainer = document.createElement('div');
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            headerContainer.innerHTML = data;
+            document.body.prepend(headerContainer);
+        });
+</script>
+
+
+    <div class="container mt-4">
+        <h2>Manage File Stores</h2>
+
+        <!-- Form to Create a New File Store -->
+        <div class="card mt-4">
+            <div class="card-header">
+                Create New File 
+            </div>
+            <div class="card-body">
+                <form id="createFileStoreForm">
+                    <div class="form-group">
+                        <label for="fileStoreName">File  Name</label>
+                        <input type="text" class="form-control" id="fileStoreName" placeholder="Enter File Store Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileStoreDescription">Description</label>
+                        <textarea class="form-control" id="fileStoreDescription" placeholder="File Store Description"></textarea>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary">Create File Store</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Section to Display Existing File Stores -->
+        <div class="mt-4">
+            <h3>Existing File Stores</h3>
+            <div id="fileStoresList">
+                <!-- File stores will be listed here (using js und data from backend) -->
+                <ul>
+                    <li>jdfjdsfds</li>
+                    <li>fsdfjkdsbfj</li>
+                    <li>fnfjbewjfbewfje</li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Include the footer  -->
+ <script>
+    var footerContainer = document.createElement('div');
+    fetch('Footer.html')
+        .then(response => response.text())
+        .then(data => {
+            footerContainer.innerHTML = data;
+            document.body.appendChild(footerContainer);
+        });
+</script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
